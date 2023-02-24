@@ -1,0 +1,24 @@
+[project]
+name = "mutation-testing-pykonik"
+version = "1.0.0"
+dependencies = [
+    "mutmut",
+    "pip-tools",
+    "pre-commit",
+    "pytest",
+    "pytest-cov",
+    "fire",
+]
+
+[tool.mutmut]
+paths_to_mutate = "fizzbuzz/"
+tests_dir = "tests/"
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-branch"
+
+[tool.coverage.report]
+omit = [
+    "tests/*",
+    "*/__init__.py",
+]
